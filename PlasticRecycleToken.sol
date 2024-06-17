@@ -10,13 +10,13 @@ contract PlasticRecycleToken is ERC20, Ownable {
         transferOwnership(msg.sender);
     }
 
-    // Mint function restricted to contract owner
-    function mint(address to, uint256 amount) public onlyOwner {
+    // Produce tokens function restricted to contract owner
+    function produceTokens(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
     }
 
-    // Burn function to allow any user to destroy their tokens
-    function burn(uint256 amount) public {
+    // Recycle tokens function to allow any user to destroy their tokens
+    function recycleTokens(uint256 amount) public {
         _burn(msg.sender, amount);
     }
 
